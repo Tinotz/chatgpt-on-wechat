@@ -14,11 +14,11 @@ from channel.chat_channel import ChatChannel
 from channel.wechatmp.common import * 
 
 # If using SSL, uncomment the following lines, and modify the certificate path.
-# from cheroot.server import HTTPServer
-# from cheroot.ssl.builtin import BuiltinSSLAdapter
-# HTTPServer.ssl_adapter = BuiltinSSLAdapter(
-#         certificate='/ssl/cert.pem',
-#         private_key='/ssl/cert.key')
+from cheroot.server import HTTPServer
+from cheroot.ssl.builtin import BuiltinSSLAdapter
+HTTPServer.ssl_adapter = BuiltinSSLAdapter(
+        certificate='/ssl/cert.pem',
+        private_key='/ssl/cert.key')
 
 @singleton
 class WechatMPChannel(ChatChannel):
